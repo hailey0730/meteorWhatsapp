@@ -1,5 +1,6 @@
 {
   "name": "whatsapp",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "pro_id": "c6f73f18"
 }

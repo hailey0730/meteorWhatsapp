@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { Chat } from "api/models/whatsapp-models";
+import { Chats, Messages } from "api/collections/whatsapp-collections";
 
 @Component({
   selector: 'app-list',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
+  chats;
   private selectedItem: any;
   private icons = [
     'flask',
@@ -31,6 +35,22 @@ export class ListPage implements OnInit {
   }
 
   ngOnInit() {
+    this.chats = Chats
+      .find({})
+      // .mergeMap((chats: Chat[]) =>
+      //   Observable.combineLatest(
+      //     ...chats.map((chat: Chat) =>
+      //       Messages
+      //         .find({ chatId: chat._id })
+      //         .startWith(null)
+      //         .map(messages => {
+      //           if (messages) chat.lastMessage = messages[0];
+      //           return chat;
+      //         })
+      //     )
+      //   )
+      // ).zone();
+      console.log(this.chats)
   }
   // add back when alpha.4 is out
   // navigate(item) {
